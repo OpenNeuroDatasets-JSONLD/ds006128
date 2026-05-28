@@ -6,7 +6,7 @@ Susanne Stoll, Falk Luesebrink, D. Samuel Schwarzkopf, Hendrik Mattern, Peng Liu
 
 This repository contains
 
-- data as reported in our manuscript, which is available as a [preprint](https://doi.org/10.1101/2025.05.24.655840).
+- data as reported in our manuscript, which is available as a [preprint](https://doi.org/10.1101/2025.05.24.655840) and [journal article](https://doi.org/10.1162/IMAG.a.1210).
 - data not presented in our manuscript but related to it, such as fMRI data that were not smoothed or goodness-of-fit values that were statistically adjusted for model complexity and not via a cross-validation procedure.
 
 Please report any issues by sending an email to stollsus@gmail.com. Thank you!
@@ -19,8 +19,7 @@ For further information, please refer to our [OSF](https://doi.org/10.17605/OSF.
 
 ### TODO
 
-- Annotate novel .label and .png files (revision 1)
-- Annotate files with [...] flag.
+- Annotate files with [...] flag (it is currently not entirely clear to us what these files are good for; they are just unused output files).
 
 ---
 
@@ -268,7 +267,7 @@ The list below focuses on 'sub-01'. The directory structures and files for the r
 
 #### derivatives/SamSrf/sub-01/ses-01/FWHM-1
 
-The list below focuses on 'sub-01', 'ses-01', 'run-01' or 'run-all', 'FWHM-1', and 'rh'. The directory structures and files for the remaining subjects ('sub-02' to 'sub-03'), sessions ('ses-02' to 'ses-04'), runs ('run-02' to 'run-10'), surface smoothing kernel widths ('FWHM-0'), and brain hemispheres ('lh') are equivalent, if not indicated otherwise.
+The list below focuses on 'sub-01', 'ses-01', 'run-01' or 'run-all', 'FWHM-1', 'rh', and 'vertex-1'. The directory structures and files for the remaining subjects ('sub-02' to 'sub-03'), sessions ('ses-02' to 'ses-04'), runs ('run-02' to 'run-10'), surface smoothing kernel widths ('FWHM-0'), brain hemispheres ('lh'), and vertices ('vertex-2') are equivalent, if not indicated otherwise.
 
 - **rh_sub-01_ses-01_task-pRF_run-01_FWHM-1_BBR_mgh2srf.mat**: Like _rh_sub-01_ses-01_task-pRF_run-01_bold_registered_to_sub-01_ses-all_T1w_downsampled_biasCorrected_template0_FWHM-1_BBR.mgh_, but converted to [SamSrf](https://github.com/samsrf/samsrf/tree/4de3223950fc4cb995941b2041e2dcc73bb9bbd4) MAT format, linearly detrended, and _z_-standardized.
 
@@ -281,6 +280,10 @@ The list below focuses on 'sub-01', 'ses-01', 'run-01' or 'run-all', 'FWHM-1', a
 - **del_rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_mean.mat** (only present for 'ses-01', 'rh', and 'FWHM-1'): File that contains the manual delineation for the identified fingertip cluster. The delineation was initialized using _rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_mean.mat_ (ergo the file name), but is based on _rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_spmcan_glm_conts.mat_.
 
 - **ROIs_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_mean/rh_D2a.label** (only present for 'ses-01', 'rh', and 'FWHM-1'): File in subfolder that contains a [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall)-compatible label called 'D2a' reflecting the delineation stored in _del_rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_mean.mat_.
+
+- **ROIs_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_mean/rh_vertex-1.label** (only present for 'ses-01', 'rh', and 'FWHM-1'): File in subfolder that contains a [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall)-compatible label called 'vertex-1' reflecting the delineation of a single vertex.
+
+
 
 ---
 
@@ -480,6 +483,9 @@ The list below focuses on 'sub-01', 'ses-01', 'FWHM-1', and 'rh'. The directory 
 
 - **rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_spmcan_glm_conts_map-Stim-Rest.png**: File that displays the _t_-statistic map for the contrast stimulation vs baseline (rest) along with a delineation of SI. The visualization is associated with _rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_spmcan_glm_conts.mat_ and _rh.postcentral.label_.
 
+- **rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_mean_map-NoiseCeiling.png**: File that displays the noise ceiling map along with a delineation of SI. The visualization is associated with _rh_sub-01_ses-01_task-pRF_run-all_FWHM-1_BBR_mgh2srf_mean.mat_ and _rh.postcentral.label_.
+
+
 ---
 
 ### derivatives/results/sub-01/ses-02+03+04/FWHM-1
@@ -501,7 +507,12 @@ The list below focuses on 'sub-01', 'FWHM-1', and 'rh'. The directory structures
 - **rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_map-y0_masked-anat.png**: Like _rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_map-aR^2_masked-anat.png_, but for y0.
   
 - **rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_tc-obsvsfit.png**: File displaying the observed and fit time courses for example vertices. The visualization is associated with _rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit.mat_ and _rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_onoff_aperture-pins_vec_spmcan_CrsFit.mat_.
+
+- **rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_map-NoiseCeiling.png**: File that displays the noise ceiling map along with a delineation of SI. The visualization is associated with _rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean.mat_ and _rh.postcentral.label_.
   
+- **rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_map-x0_masked-func_masked-anat.png**: File that displays a map showing x0 using an anatomical mask, a functional mask, and delineations of individual vertices. The visualization is associated with _rh_sub-01_ses-02+03+04_task-prf_run-all_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit.mat_ and _rh_vertex-1.label_ and _rh_vertex-2.label_. 
+
+                                                                                                                                                                                                          
 ---
 
 ### derivatives/results/sub-01/ses-02+03+04-eve/FWHM-1
@@ -516,5 +527,9 @@ The list below focuses on 'sub-01', 'ses-02+03+04-eve', 'FWHM-1', and 'rh'. The 
 - **rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_map-diff-cR^2_masked-anat.png**: Like _rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_map-cR^2_masked-anat.png_, but for diff-cR^2 (2dg-fix vs onoff model).
   
 - **rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_onoff_aperture-pins_vec_spmcan_CrsFit_map-cR^2_masked-anat.png**: Like _rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_map-cR^2_masked-anat.png_, but the visualization is associated with _rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_onoff_aperture-pins_vec_spmcan_CrsFit.mat_.
+
+- **rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_map-NoiseCeiling.png**: File that displays the noise ceiling map along with a delineation of SI. The visualization is associated with _rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean.mat_ and _rh.postcentral.label_.
+
+- **rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit_map-x0_masked-func_masked-anat.png**: File that displays a map showing x0 using an anatomical mask, a functional mask, and delineations of individual vertices. The visualization is associated with _rh_sub-01_ses-02+03+04-eve_task-prf_run-eve_FWHM-1_BBR_mgh2srf_mean_2dg-fix_aperture-pins_vec_spmcan_CrsFit.mat_ and _rh_vertex-1.label_ and _rh_vertex-2.label_. 
 
 ---
